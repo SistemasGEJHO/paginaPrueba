@@ -1,0 +1,318 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    padding: 10px 40px;
+    background-color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar__img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__img img {
+    max-width: 100%;
+}
+
+.navbar__list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    justify-content:space-evenly;
+}
+
+.navbar__item {
+    text-transform: uppercase;
+    color: #08318b;
+    cursor: pointer;
+    font-weight: lighter;
+    font-size: small;
+}
+
+/* Sección Presentación */
+.presentacion {
+    display: flex;
+    align-items: center;
+    text-wrap: pretty;
+    justify-content: space-between;
+    background-color: #a6180d; /* Rojo oscuro */
+    color: #c6dbe3;
+    padding: 40px;
+    gap: 15%;
+}
+
+.presentacion__contenido {
+    max-width: 50%;
+    text-align: left;
+}
+
+.presentacion h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.presentacion p {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    white-space: pre;
+}
+
+.cta-button {
+    background-color: #c6dbe3;
+    color: #2353bb;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight:bolder;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.presentacion__imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Sección Misión y Visión */
+.mision-vision {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c6dbe3; /* Azul claro */
+    padding: 40px;
+    gap: 20px;
+}
+
+.mision-vision__imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.mision-vision__contenido {
+    max-width: 50%;
+    color: #08318b;
+    text-align: left;
+}
+
+.mision-vision h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.mision-vision p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.cta-link {
+    color: #8b0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/*vamos a las secciones*/
+
+
+
+#secciones{
+    margin-top: 40px;
+}
+.grid{
+    margin-top: 20px;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5%;
+    margin-bottom: 80px;
+}
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    color: white;
+    font-weight: bolder;
+    gap: 4%;
+}
+.card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+.card .front{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+
+}
+.card .back{
+    transform: perspective(600px) rotateY(180deg);
+    background: #a6180d;
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+} 
+
+.card .back .link_categorias {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link_categorias a {
+    color: #f3f3f3;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+
+
+
+/*En Numeros*/
+
+
+
+#grid__enNumeros{
+    gap: 0;
+}
+.enNumeros{
+    background-color:#c6dbe3;
+    border: #000 solid 1px;
+    text-align: center;
+    color: black;
+}
+.enNumeros img{
+ width: 30%;
+}
+.enNumeros div{
+    font-size: 450%;
+    font-weight: bolder;
+}
+
+.enNumeros p{
+    font-size: 120%;
+}
+.enNumeros:nth-child(5) img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.enNumeros:nth-child(5) div{
+ display: none;
+}
+
+@keyframes aparecer{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Oculta los elementos inicialmente */
+.ocultar {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Clase para activar la animación */
+.animar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/*UBICACION
+
+
+*/
+.mapa {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.mapa__contenedor {
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid #ccc; /* Bordes para mejor apariencia */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Esconde partes fuera del marco */
+}
+
+.mapa__contenedor iframe {
+    width: 100%; /* El iframe ocupa todo el ancho */
+    height: 300px; /* Altura fija */
+    border: none; /* Sin bordes adicionales */
+}
