@@ -34,6 +34,7 @@ body {
   display: flex;
   gap: 30px;
   list-style: none;
+  flex-wrap: wrap;
   margin-top: 10px;
   margin-bottom: 30px;
   justify-content: space-evenly;
@@ -46,7 +47,11 @@ body {
   font-weight: lighter;
   font-size: small;
 }
-
+.navbar__item:hover {
+  color: #a6180d; /* Cambia el color al rojo oscuro al pasar el cursor */
+  text-decoration: underline; /* Opcional: subraya el texto */
+  transition: color 0.3s ease; /* Añade una transición suave */
+}
 /* Sección Presentación */
 .presentacion {
   display: flex;
@@ -476,7 +481,22 @@ footer {
 
 /*MEDIA QUERY*/
 
-@media (max-width: 958px) {
+@media (max-width: 1000px) {
+  .navbar__list {
+    display: grid; /* Activamos Grid */
+    grid-template-rows: repeat(2, auto); /* Creamos dos filas dinámicas */
+    grid-template-columns: repeat(
+      5,
+      1fr
+    ); /* Distribuimos elementos en hasta 5 columnas */
+    justify-items: center; /* Centramos cada elemento dentro de su celda */
+    gap: 10px; /* Espaciado entre los elementos */
+  }
+  .navbar__item {
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+    white-space: nowrap; /* Evita que las palabras se dividan en varias líneas */
+  }
+
   .nuestra__info {
     grid-template-columns: 1fr 1fr;
     grid-row: 2fr;
