@@ -138,61 +138,24 @@ display: none;
       transform: translateY(0);
   }
 }
-
-/* Sección Misión y Visión */
-.mision-vision {
-color: black;
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-background: #c6dbe3; /* Azul claro */
-margin: 2em 0;
-box-shadow: 0 0 15px rgba(0,0,0,0.7);
+/*Mision y vision*/
+.mision-vision{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgba(44, 132, 173, 0.5);
+  margin: 2% 0;
+  
+}
+.mision-vision__imagen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.mision-vision__imagen img{
+  width: 100%;
 
-.mision-vision__contenido {
-padding: 1.5em;
-width: 65%;
-display: flex;
-justify-content: space-evenly;
-align-items: flex-start;
-flex-direction: column;
-}
-.mision-vision__imagen {
-  width: 35%;
-  height: 18em;
-  position: relative;
-  overflow: hidden;
-  margin-left: auto; /* Añade margen izquierdo automático */
-  margin-right: 0;   /* Asegura que no haya margen derecho */
-}
-
-.mision-vision__imagen::before {
-content: "";
-position: absolute;
-left: -6.1em;
-top: 50%;
-transform: translateY(-50%) rotate(20deg);
-background-color:#c6dbe3;
-width: 40%;
-height: 140%;
-box-shadow: 0 0 20px rgba(0,0,0,0.7);
-}
-.mision-vision__contenido h2 {
-  font-size: 2rem;
-  margin-bottom: 1em;
-  color: #08318b;
-  text-align: center;
-  border-bottom: 2px solid #08318b;
-  display: inline-block;
-}
-
-.cta-link {
-  color: #8b0000;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 /*vamos a las secciones*/
@@ -556,22 +519,6 @@ footer {
     white-space: nowrap; /* Evita que las palabras se dividan en varias líneas */
   }
 
-  .mision-vision__contenido {
-    padding: 1.5em;
-    width: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    flex-direction: column;
-    }
-    .mision-vision__imagen {
-      width: 50%;
-      height: 18em;
-      position: relative;
-      overflow: hidden;
-      margin-left: auto; /* Añade margen izquierdo automático */
-      margin-right: 0;   /* Asegura que no haya margen derecho */
-    }
 
   .grid {
     margin-top: 20px;
@@ -610,10 +557,11 @@ body {
 
 .menu-icon{
   display: flex;
+
 }
 
 .navbar__list{
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   width: 100%;
@@ -649,28 +597,31 @@ height: 100vh;
   transform: rotate(-45deg) translate(15px, -4px);
 }
 
-  .mision-vision{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+@media (max-width: 768px) {
+  .presentacion {
+    justify-content: center;
+    flex-direction: column; /* Cambiar la dirección del flex a columna */
+    padding: 20px; /* Reducir el padding en pantallas pequeñas */
   }
-  .mision-vision__imagen{
-    display: flex;
-    width: 100%;
-  } 
-  mision-vision__imagen::before{
-    content: none;
+
+  .presentacion__contenido {
+    text-align: center; /* Asegura que el contenido esté centrado en pantallas pequeñas */
   }
-  .mision-vision__contenido{
-    width: 100%;
+
+  .presentacion h1 {
+    font-size: 2.5rem; /* Reducir el tamaño del título */
   }
-  .mision-vision__imagen img{
-    width: auto;
-    margin-bottom: 0;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: 0;
+
+  .presentacion p {
+    font-size: 1.5rem; /* Reducir el tamaño del texto */
   }
+
+  .cta-button {
+    width: 100%; /* Hacer el botón más grande en pantallas pequeñas */
+    padding: 10px;
+    font-size: 1rem; /* Ajustar tamaño del botón */
+  }
+
 
   .grid {
     margin-top: 20px;
@@ -695,3 +646,7 @@ height: 100vh;
     width: 90%;
   }
 }
+}
+
+
+
