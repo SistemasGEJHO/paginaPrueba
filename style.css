@@ -74,13 +74,56 @@ display: none;
   transition: color 0.3s ease; /* Añade una transición suave */
 }
 /* Sección Presentación */
+.cointainer-carrousel{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.carrousel{
+width: 200%;
+height: 100%;
+display: flex;
+}
+.slider-section{
+  width: calc(100%/2);
+  height: 100%;
+}
+
+.btn-left,
+.btn-right{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ffffff81;
+  transform: translate(0,-50%);
+  transition: .5s ease;
+  user-select: none;
+}
+.btn-left{
+  left: 20px;
+}
+
+.btn-right{
+  right: 20px;
+}
+.btn-left:hover,
+.btn-right:hover{
+  background-color: #3333;
+}
 .presentacion {
   display: flex;
   height: 100vh;
   align-items: center;
   text-wrap: wrap;
   justify-content: space-between;
-  background: linear-gradient(to bottom, rgb(0 0 0 / 0.25),rgb(0 0 0 /1)),url(./img/esquina.jpg);
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0.25),rgb(0 0 0 /0.50)),url(./img/esquina.jpg);
   color: white;
   background-size: cover;
   background-position: center;
@@ -141,23 +184,20 @@ display: none;
 /*Mision y vision*/
 .mision-vision{
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content:center;
   height: 100vh;
-  background:linear-gradient(to top , rgb(0 0 0 / .25), rgb(0 0 0 / 1)),url(./img/dos-ninos-estudiando-juntos-escritorio_1280516-40991.jpg);
-  background-size: cover;
+  align-items: center;
+  text-wrap: wrap;
+  justify-content: space-between;
+  color: white;
   background-position: center;
-  
+  padding: 40px;
+  gap: 15%;
+  background:linear-gradient(to bottom , rgb(0 0 0 / .25), rgb(0 0 0 / 0.50)),url(./img/dos-ninos-estudiando-juntos-escritorio_1280516-40991.jpg);
+  background-size: cover;
 }
 .mision-vision__contenido {
-    color: #fff;
-    font-weight: bold;
-    text-align: start;
-    width: 70%;
-    max-width: 800px;
-    padding: 20px;
-    animation: fadeInUp 1.5s ease-in-out;
+  max-width: 50%;
+  text-align: left;
   }
   .mision-vision__contenido h2 {
     font-size: 2.5rem;
@@ -165,14 +205,13 @@ display: none;
     letter-spacing: 2px;
   }
   .mision-vision__contenido h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #1989ca;
+    font-size: 4rem; /* Título más grande */
+    font-weight: bold;
+    margin: 0 0 20px;
   }
   .mision-vision__contenido p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+  margin-bottom: 20px;
   }
 
   .mision-vision__contenido .cta-link {
@@ -467,18 +506,26 @@ footer {
   transform: scale(1.05); /* Ligero aumento en hover */
 }
 .comunidad img {
-  width: 10%;
-}
-.comunidad img :first-child {
-  width: 2%;
+  width: 30px; /* Tamaño ajustado del icono */
+  height: auto;
 }
 .comunidad a {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center; /* Centra horizontalmente */
+  gap: 10px; /* Espacio entre el icono y el texto */
+  width: 200px; /* Ajusta el ancho para que todos sean iguales */
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .comunidad a:hover {
-  text-decoration: underline;
+  background-color: #8b0000; /* Fondo rojo en hover */
+  color: white; /* Texto en blanco */
+  text-decoration: none; /* Evita subrayado */
 }
 .intranet button:hover {
   background-color: #a6180d;
@@ -631,21 +678,27 @@ height: 100vh;
 }
 
 @media (max-width: 768px) {
-  .presentacion {
+  .presentacion,
+  .mision-vision {
     justify-content: center;
     flex-direction: column; /* Cambiar la dirección del flex a columna */
     padding: 20px; /* Reducir el padding en pantallas pequeñas */
   }
 
-  .presentacion__contenido {
+  .presentacion__contenido,
+  .mision-vision {
     text-align: center; /* Asegura que el contenido esté centrado en pantallas pequeñas */
   }
 
   .presentacion h1 {
     font-size: 2.5rem; /* Reducir el tamaño del título */
   }
+  .mision-vision h2{
+    font-size: 2.5rem; /* Reducir el tamaño del título */
+  }
 
-  .presentacion p {
+  .presentacion,
+  .mision-vision p {
     font-size: 1.5rem; /* Reducir el tamaño del texto */
   }
 

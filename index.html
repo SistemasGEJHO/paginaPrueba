@@ -5,54 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instituto JHO</title>
     <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <header class="navbar">
-      <div class="navbar__img">
-        <img src="./img/jho_img.png" alt="Logo del instituto" />
+      <!-- asi se ponen los componentes, llamo al que deseo con el id y con js utilizando fetch + la ubicacion del archivo -->
+      <div id="navbar"></div> 
+      <script>
+      fetch('components/navbar.html') 
+          .then(response => response.text())
+          .then(data => document.getElementById('navbar').innerHTML = data);
+      </script>
+      <!-- hasta aca -->
+      <div class="cointainer-carrousel">
+        <div class="carrousel" id="slider">
+          <section class="slider-section">
+            <section class="presentacion">
+              <div class="presentacion__contenido">
+                <h1>Instituto Jesús en el Huerto de los Olivos</h1>
+                <p>Guiados por la fe, educando para el futuro</p>
+                <button class="cta-button">Inscripciones</button>
+              </div>
+            </section>
+          </section>
+          <section class="slider-section">
+          <section class="mision-vision">
+            <div class="mision-vision__contenido">
+              <h2>Misión y Visión</h2>
+              <p>
+                La misión del Instituto Jesús en el Huerto de los Olivos es la
+                formación integral de la persona desde una cosmovisión cristiana, a
+                fin de lograr que nuestros niños y jóvenes sean verdaderos cristianos
+                y ciudadanos capaces de resolver y transformar los desafíos que les
+                toque vivir.
+              </p>
+              <a href="#" class="cta-link">Ver más</a>
+            </div>
+          </section>
+         </section>
+        </div>
+        <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
+        <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
       </div>
-      <div class="navbar_complete">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </label>
-        <ul class="navbar__list">
-          <li class="navbar__item">Inscripciones</li>
-          <li class="navbar__item">Nosotros</li>
-          <li class="navbar__item">Maternal e Inicial</li>
-          <li class="navbar__item">Primaria</li>
-          <li class="navbar__item">Secundaria</li>
-          <li class="navbar__item">Pastoral</li>
-          <li class="navbar__item">Deportes</li>
-          <li class="navbar__item">Idiomas</li>
-          <li class="navbar__item">Comunidad</li>
-        </ul>
-      </div>
-    </header>
-
-    <section class="presentacion">
-      <div class="presentacion__contenido">
-        <h1>Instituto Jesús en el Huerto de los Olivos</h1>
-        <p>Guiados por la fe, educando para el futuro</p>
-        <button class="cta-button">Inscripciones</button>
-      </div>
-    </section>
-
-    <section class="mision-vision">
-      <div class="mision-vision__contenido">
-        <h2>Misión y Visión</h2>
-        <p>
-          La misión del Instituto Jesús en el Huerto de los Olivos es la
-          formación integral de la persona desde una cosmovisión cristiana, a
-          fin de lograr que nuestros niños y jóvenes sean verdaderos cristianos
-          y ciudadanos capaces de resolver y transformar los desafíos que les
-          toque vivir.
-        </p>
-        <a href="#" class="cta-link">Ver más</a>
-      </div>
-    </section>
 
     <section id="secciones">
       <h2>¿Por qué elegir el Instituto Jesús en el Huerto de los Olivos?</h2>
@@ -215,35 +212,12 @@
     <section class="certificados">
       <img src="./img/certificados__img.jpg" alt="" />
     </section>
-    <footer>
-      <section class="nuestra__info">
-        <div class="informacion__contacto">
-          <h3>institute Jesus en el huerto de los olivos</h3>
-          <p>r.Gutierrez 1199, Olivos</p>
-          <p>4790-5772</p>
-          <button>Inscripciones</button>
-          <a href="#">amdinistracion@gejho.org</a>
-        </div>
-        <div class="comunidad">
-          <h3>Unite a la Comunidad</h3>
-          <a href="http://"
-            ><img src="./img/logotipo-de-instagram.png" alt="" /> Instagram</a
-          >
-          <a href="http://"><img src="./img/youtube.png" alt="" />youtube</a>
-        </div>
-        <div class="unirse_al_Gejho">
-          <h3>
-            ¿queres formar parte del instituto Jesus en el huerto de los olivos?
-          </h3>
-          <button>envianos tu cv</button>
-        </div>
-      </section>
-      <div class="intranet">
-        <p>Este Instituto pertenece al:</p>
-        <img src="./img/grupo_educativo.jpg" alt="" />
-        <button>intranet</button>
-      </div>
-    </footer>
+    <div id="footer"></div> 
+      <script>
+      fetch('components/footer.html') 
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+      </script>
     <script src="script.js"></script>
   </body>
 </html>
