@@ -1,3 +1,17 @@
+//con este comando hacemos desaparecer y aparecer la pagina cuando cambiemos de html.
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in"); // Hace que la nueva página aparezca suavemente
+});
+
+function goToPage(url) {
+    document.body.style.opacity = "0"; // Desvanece la página actual
+    setTimeout(() => {
+        window.location.href = url; // Cambia de página después del desvanecimiento
+    }, 800); // El mismo tiempo que el CSS (0.8s)
+}
+
+
+
 // Seleccionamos los botones de navegación y el contenedor del slider
 const btnleft = document.querySelector(".btn-left"),
       btnright = document.querySelector(".btn-right"),

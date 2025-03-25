@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instituto JHO</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  </head>
+<body>
+    <div id="navbar"></div> 
+      <script>
+      fetch('components/navbar.html') 
+          .then(response => response.text())
+          .then(data => document.getElementById('navbar').innerHTML = data);
+      </script>
+      <div class="inscripcionesContainer">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdmG5XKN7yEWZPhjXDD6fVdcyWqSeTQgwaHPNBZUTogpzLevw/viewform?embedded=true" width="640" height="1901" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+       <div class="imgColumn">
+        <div class="imgContainerINS">
+            <img src="./img/dos-ninos-estudiando-juntos-escritorio_1280516-40991.jpg" alt="">
+        </div>
+        <div class="imgContainerINS">
+            <img src="./img/chicos_primaria.png" alt="">
+        </div>
+        <div class="imgContainerINS">
+            <img src="./img/chicos_secundaria.jpg" alt="">
+        </div>
+        <div class="imgContainerINS">
+            <img src="./img/esquina.jpg" alt="">
+        </div>
+        </div>
+        </div>
+        <div id="footer"></div> 
+       <script>
+       fetch('components/footer.html') 
+           .then(response => response.text())
+           .then(data => document.getElementById('footer').innerHTML = data);
+       </script>
+     <script src="script.js"></script>
+   </body>
+
+</html>

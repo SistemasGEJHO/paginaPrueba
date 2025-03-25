@@ -5,9 +5,20 @@
   box-sizing: border-box;
 }
 
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+
+
 html,
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   width: 100%;
   height: 100%;
   padding: 10px 40px;
@@ -18,6 +29,10 @@ body {
 .navbar {
   display: flex;
   flex-direction: column;
+}
+
+.navbar a{
+  text-decoration: none;
 }
 
 .navbar__img {
@@ -740,4 +755,147 @@ height: 100vh;
 }
 
 
+/*EMEPZAMOS SECUNDARIA*/
 
+.containerSecundaria {
+  display: flex;
+  align-items: stretch; /* Hace que ambos elementos tengan la misma altura */
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  margin-bottom: 10%;
+}
+
+.text-sectionSec{
+  flex: 1;
+  padding: 40px;
+  background-color: #E5F3FF;
+  color: #002147;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  gap: 10%;
+}
+
+#nuestraPropuesta,
+#familiaEscuela{
+  background-color:#8b0000;
+  color: white;
+}
+
+#inclusion{
+  background-color:#002147;
+  color: white;
+}
+.text-sectionSec h2{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.text-sectionSec p{
+  font-size: 1rem;
+  margin-top: 10px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.text-sectionSec ul{
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.text-sectionSec li{
+  margin-bottom: 5%;
+}
+.image-sectionSec{
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-sectionSec img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la imagen ocupe todo el espacio sin deformarse */
+}
+
+@media (max-width: 768px) {
+  .containerSecundaria {
+      flex-direction: column;
+  }
+
+  .text-sectionSec,
+  .image-sectionSec {
+      max-width: 100%;
+      text-align: center;
+  }
+
+  .text-sectionSec {
+      padding: 20px;
+  }
+}
+
+
+
+/* INSCRIPCIONES */
+
+
+
+.inscripcionesContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: #c6dbe3;
+  width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
+  max-width: 100%;
+  overflow: hidden; /* Evita desbordamientos */
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/* Ajuste del formulario */
+iframe {
+  flex: 1; /* Ocupa el espacio disponible */
+  max-width: 50%; /* Limita el ancho del formulario */
+  min-width: 400px; /* Evita que sea demasiado pequeño en pantallas reducidas */
+}
+
+/* Columna de imágenes */
+.imgColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  flex: 1; /* Ocupa el espacio restante */
+  max-width: 50%;
+}
+
+/* Ajuste de imágenes */
+.imgContainerINS {
+  width: 100%;
+}
+
+.imgContainerINS img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene la proporción sin deformarse */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .inscripcionesContainer {
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+  }
+  iframe, .imgColumn {
+      max-width: 100%;
+      height: 100%;
+  }
+  .imgContainerINS {
+      display: none;
+  }
+}
